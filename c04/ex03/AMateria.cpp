@@ -17,7 +17,10 @@ AMateria::AMateria(){}
 
 AMateria :: ~AMateria(){}
 
-AMateria:: AMateria(std::string const & type){this->type = type;}
+AMateria:: AMateria(std::string const & type)
+{
+    this->type = type;
+}
 
 std::string const& AMateria::getType() const
 {
