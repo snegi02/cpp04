@@ -17,7 +17,7 @@ Brain::Brain()
     std::cout << "Brain created." << std::endl;
     for (int i = 0; i < 100 ; i++)
     {
-        this->ideas[i] = "ideas";
+        this->ideas[i] = "ideas" + i;
     }
 }
 

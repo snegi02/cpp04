@@ -19,6 +19,6 @@ class WrongCat : public WrongAnimal
     public:
         WrongCat();
         ~WrongCat();
-    void makeSound() const;
+        void makeSound() const;
 };
 #endif

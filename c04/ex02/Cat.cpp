@@ -21,6 +21,7 @@ Cat:: Cat()
 
 Cat::~Cat() 
 {
+    delete brain;
     std::cout << "Cat destroyed" << std::endl;
 }
 

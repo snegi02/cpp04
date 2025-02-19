@@ -15,7 +15,7 @@
 
 int main() 
 {
-    const int animalCount = 4; // Adjust as needed
+    const int animalCount = 2; // Adjust as needed
     Animal* animals[animalCount];
 
     for (int i = 0; i < animalCount / 2; ++i) {

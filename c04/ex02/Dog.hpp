@@ -23,7 +23,7 @@ class Dog : public Animal
     public:
         Dog();
         ~Dog();
-    void makeSound() const;
+        void makeSound() const;
 };
 
 #endif
