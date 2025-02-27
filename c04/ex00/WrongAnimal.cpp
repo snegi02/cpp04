@@ -17,6 +17,22 @@ WrongAnimal:: WrongAnimal() : type("WrongAnimal")
     std::cout << "WrongAnimal created" << std::endl;
 }
 
+WrongAnimal::WrongAnimal(const WrongAnimal& other)
+{
+    *this = other;
+    std::cout << "WrongAnimal copied." << std::endl;
+}
+
+WrongAnimal& WrongAnimal::operator=(const WrongAnimal& other)
+{
+    if(this != &other)
+    {
+        this->type = other.type;
+        std::cout << "WrongAnimal assigned." << std::endl;
+    }
+    return *this;
+}
+
 WrongAnimal::~WrongAnimal() 
 {
     std::cout << "WrongAnimal destroyed" << std::endl;

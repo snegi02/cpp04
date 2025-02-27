@@ -11,7 +11,7 @@
 # **************************************************************************** #
 
 CC	=	c++
-CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow  -Wno-shadow
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98 -Wshadow
 
 SRCS	=	main.cpp Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp
 

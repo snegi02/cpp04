@@ -21,19 +21,19 @@ int main()
     std::cout << j->getType() << " " << std::endl;
     std::cout << i->getType() << " " << std::endl;
     i->makeSound(); //will output the cat sound!
-    j->makeSound();
-    meta->makeSound();
+    // j->makeSound();
+    // meta->makeSound();
     delete i;
     delete j;
     delete meta;
 
-    const WrongAnimal* metaWrong = new WrongAnimal();
-    const WrongAnimal* iWrong = new WrongCat();
+    // const WrongAnimal* metaWrong = new WrongAnimal();
+    // const WrongAnimal* iWrong = new WrongCat();
 
-    std::cout << iWrong->getType() << " " << std::endl;
-    iWrong->makeSound(); // Should output the WrongAnimal sound, not the WrongCat sound
-    delete iWrong;
-    delete metaWrong;
+    // std::cout << iWrong->getType() << " " << std::endl;
+    // iWrong->makeSound(); // Should output the WrongAnimal sound, not the WrongCat sound
+    // delete iWrong;
+    // delete metaWrong;
     
     return 0;
 }
