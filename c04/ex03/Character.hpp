@@ -15,12 +15,14 @@
 
 #include "ICharacter.hpp"
 #include "AMateria.hpp"
+#include <vector>
 
 class Character : public ICharacter
 {
     private:
         std::string name;
         AMateria* inventory[4];
+        std::vector<AMateria*> _unequippedMateria;
     public:
         Character(const std::string& name);
         Character(const Character &other);

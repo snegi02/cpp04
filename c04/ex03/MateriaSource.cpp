@@ -25,24 +25,23 @@ MateriaSource::MateriaSource(const MateriaSource& other)
     for(int i = 0; i < 4; i++)
     {
         if(other.templates[i])
-            templates[i] = other.templates[i]->clone();
+            this->templates[i] = other.templates[i]->clone();
         else
-            templates[i] = NULL;
+            this->templates[i] = NULL;
     }
 }
 
 MateriaSource& MateriaSource::operator=(const MateriaSource& other)
 {
-    if(this != &other)
+    if (this != &other)
     {
         for(int i = 0; i < 4; i++)
         {
-            delete templates[i];
-            templates[i] = NULL;
-            if (other.templates[i])
-                templates[i] = other.templates[i]->clone();
+            delete this->templates[i];
+            if(other.templates[i])
+                this->templates[i] = other.templates[i]->clone();
             else
-                templates[i] = NULL;
+                this->templates[i] = NULL;
         }
     }
     return *this;

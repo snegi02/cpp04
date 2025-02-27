@@ -19,6 +19,24 @@ Cat:: Cat()
     brain = new Brain();
 }
 
+Cat::Cat(const Cat& other) : Animal(other)
+{
+    this->brain = new Brain(*other.brain);
+    std::cout << "Cat copied." << std::endl;
+}
+
+Cat& Cat::operator=(const Cat& other)
+{
+    if(this != &other)
+    {
+        Animal::operator=(other);
+        delete this->brain;
+        this->brain = new Brain(*other.brain);
+        std::cout << "Cat assigned." << std::endl;
+    }
+    return *this;
+}
+
 Cat::~Cat() 
 {
     delete brain;

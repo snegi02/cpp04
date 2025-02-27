@@ -25,9 +25,9 @@ Character:: Character(const Character& other) : name(other.name)
     for (int i = 0; i < 4; i++)
     {
         if (other.inventory[i])
-            inventory[i] = other.inventory[i]->clone();
+            this->inventory[i] = other.inventory[i]->clone();
         else
-            inventory[i] = NULL;
+            this->inventory[i] = NULL;
     }
 }
 
@@ -35,18 +35,14 @@ Character& Character::operator=(const Character& other)
 {
     if(this != &other)
     {
+        this->name = other.name;
         for (int i = 0; i < 4; i++)
         {
             delete inventory[i];
-            inventory[i] = NULL;
-        }
-        name = other.name;
-        for (int i = 0; i < 4; i++)
-        {
             if(other.inventory[i])
-                inventory[i] = other.inventory[i]->clone();
+                this->inventory[i] = other.inventory[i]->clone();
             else
-                inventory[i] = NULL;
+                this->inventory[i] = NULL;
         }
     }
     return *this;
@@ -55,7 +51,13 @@ Character& Character::operator=(const Character& other)
 Character::~Character()
 {
     for (int i = 0; i < 4; i++)
+    {
         delete inventory[i];
+    }
+    for (std::vector<AMateria*>::iterator it = _unequippedMateria.begin(); it != _unequippedMateria.end(); ++it)
+    {
+        delete *it;
+    }
 }
 
 std::string const & Character::getName() const
@@ -81,6 +83,7 @@ void Character::unequip(int idx)
 {
     if(idx >= 0 && idx < 4)
     {
+        _unequippedMateria.push_back(inventory[idx]);
         inventory[idx] = NULL;
     }
 }
